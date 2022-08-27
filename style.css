@@ -26,10 +26,11 @@ body{
     color: #ffffff;
     font-family: 'calibre';
     padding-top: 6.25em;
+    outline: 2px solid pink;
 }
 
 div.project>img{
-    width: 400px;
+    width: 80%;
     height: 260px;
     object-fit: cover;
 }
@@ -78,8 +79,9 @@ ul.nav-items>li a:hover{
 
 section.about{
     padding-top: 8em;
+    width: 70%;
+    margin: 0 auto;
     margin-top: 9.25em;
-    margin-left: 20vw;
     display: flex;
     flex-direction: column;
 }
@@ -95,7 +97,9 @@ h1.header-about{
     font-weight: bold;
     color: #ccd6f6;
 }
-
+div.hamburger{
+    display: none;
+}
 h2.desc{
     font-size:4rem;
     font-weight: bold;
@@ -129,7 +133,7 @@ div.projects{
     padding: 0 3em;
     display: grid;
     gap: 3em;
-    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(360px,1fr));
 }
 
 div.project{
@@ -216,5 +220,55 @@ div.icons a:hover,div.icons a:focus-visible{
 @media (max-width:700px){
     html{
         font-size: 10px;
+    }
+
+    header
+    {
+        position: relative;
+    }
+    nav{
+        padding: 0;
+        padding: 10px 30px;
+    }
+    nav>ul.nav-items{
+        display: none;
+    }
+
+    div.logo{
+        position: relative;
+        font-size: 2.5rem;
+    }
+    
+    div.projects{
+        padding: 0;
+    }
+
+    div.project{
+        padding: 10px;
+    }
+    div.logo::before{
+        position: absolute;
+        content: '';
+        top: -5px;
+        left: -10px;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        border: 2px solid #50cdb5;
+    }
+
+    div.hamburger{
+        height: 59px;
+        position: absolute;
+        font-size: 2.5rem;
+        top: 1rem;
+        right: 6rem;
+        display: block;
+        color: #50cdb5;
+    }
+
+    div.hamburger:hover,div.hamburger:focus-visible{
+        color: #ccd6f6;
+        transition: all 200ms ease-in-out;
     }
 }
